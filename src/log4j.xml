@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!-- -->
+<!-- Log4j Configuration -->
+<!-- -->
+<!-- ===================================================================== -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+    debug="false">
+
+    <!-- Info log appender -->
+    <appender name="COMPRESSOR4J" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/compressor4j.log" />
+        <param name="Append" value="true" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p-%l:%m%n" />
+        </layout>
+    </appender>
+
+    <!-- ============================== -->
+    <!-- Append messages to the console -->
+    <!-- ============================== -->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <!-- <param name="Target" value="System.out" /> -->
+        <!-- <param name="Threshold" value="INFO" /> -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n" />
+        </layout>
+    </appender>
+
+    <!-- ================ -->
+    <!-- Define LOGGER -->
+    <!-- ================ -->
+    <logger name="log.compressor4j">
+        <priority value="DEBUG" />
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="COMPRESSOR4J" />
+    </logger>
+
+</log4j:configuration>
