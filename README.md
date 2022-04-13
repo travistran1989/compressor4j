@@ -6,4 +6,4 @@ Compressor4j is a Java dependency to simplify process of compressing and decompr
 - JRE support: 7+
 
 For documentation, usage, and examples, see:  
-http://espringtran.github.io/compressor4j/
+http://travistran1989.github.io/compressor4j/
